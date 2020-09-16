@@ -1,0 +1,84 @@
+squadsList = {} //Define dictionary to hold all squads
+swimmerList = {} //Define dictionary to hold all swimmers
+class squad
+    constructor squadName, minSessions, minAverageTime
+        this.squadName = squadName
+        this.minSessions = minSessions
+        this.minAverageTime = minAverageTime
+class swimmer
+    constructor swimmerName, minSessions, minAverageTime
+        this.swimmerName = swimmerName
+        this.minSessions = minSessions
+        this.minAverageTime = minAverageTime
+function addSquad 
+    squadName = input "Please enter the name of your squad: \n"
+    if squadName in squadsList
+        choice = input "A squad with this name already exists. Do you want to overwrite it? [y/n]"
+        choice = choice.lower //Convert input to lower case
+        while True
+            if choice != "y" and != "n"
+                choice = out "Do you want to overwrite it? [y/n]"
+                choice = choice.lower
+            else break
+        if choice == "n"
+            return False
+    while True
+        try //Input min number of sessions. 
+            minSessions = int input "Please enter the minimum number of sessions the swimmer must participate in:\n"//Integer
+            break //Exits loop if input = number
+        except ValueError // Catches ValueError if user input is not a number
+            out "A number is required"
+    while True
+        try //Input max average 50m time
+            minAverageTime = float input "Please enter the maximum average time to swim 50m in seconds:\n"
+            break //Exits loop if input = number
+        except ValueError // Catches ValueError if user input is not a number
+            out "A number is required"    
+    squadsList[squadName] = squad squadName, minSessions, minAverageTime
+    return True
+function addSwimmer 
+    swimmerName = input "Please enter the name of your swimmer: \n"
+    if swimmerName in swimmerList
+        choice = input "A swimmer with this name already exists. Do you want to overwrite them? [y/n]"
+        choice = choice.lower //Convert input to lower case
+        while True
+            if choice != "y" and != "n"
+                choice = out "Do you want to overwrite them? [y/n]"
+                choice = choice.lower
+            else break
+        if choice == "n"
+            return False
+    while True
+        try //Input min number of sessions. 
+            minSessions = int input "Please enter the minimum number of sessions the swimmer is willing to do:\n"//Integer
+            break //Exits loop if input = number
+        except ValueError // Catches ValueError if user input is not a number
+            out "A number is required"
+    while True
+        try //Input max average 50m time
+            minAverageTime = float input "Please enter the average time it takes the swimmer to swim 50m in seconds:\n"
+            break //Exits loop if input = number
+        except ValueError // Catches ValueError if user input is not a number
+            out "A number is required"    
+    swimmerList[swimmerName] = swimmer swimmerName, minSessions, minAverageTime
+    return True
+version = "2.0.0"
+out "Squad chooser Version: {version} \n Copyright © 2020 Matthew Nickson, All rights reserved\nLicensed under MIT" 
+while True
+    out """
+    [1] Add swimmer
+    [2] Add squad
+    [3] Generate squads
+    [4] Quit
+    """
+    choice = input "Please choose an option: "
+
+    if choice = 1
+        pass
+
+    if choice = 2
+        state = addSquad
+        if state
+            out "successfully created squad"
+        else
+            out "Failed to create squad"

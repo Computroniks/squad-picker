@@ -1,0 +1,63 @@
+swimmerList = {}
+squad1 = []
+squad2 = []
+squad3 = []
+noSquad = []
+version = "1.0.0"
+function addSwimmer 
+    swimmerName = input "Please enter the name of your swimmer: \n"
+    if swimmerName in swimmerList
+        choice = input "A swimmer with this name already exists. Do you want to overwrite them? [y/n]"
+        choice = choice.lower //Convert input to lower case
+        while True
+            if choice != "y" and != "n"
+                choice = out "Do you want to overwrite them? [y/n]"
+                choice = choice.lower
+            else break
+        if choice == "n"
+            return False
+    while True
+        try //Input min number of sessions. 
+            minSessions = int input "Please enter the minimum number of sessions the swimmer is willing to do:\n"//Integer
+            break //Exits loop if input = number
+        except ValueError // Catches ValueError if user input is not a number
+            out "A number is required"
+    while True
+        try //Input max average 50m time
+            minAverageTime = float input "Please enter the average time it takes the swimmer to swim 50m in seconds:\n"
+            break //Exits loop if input = number
+        except ValueError // Catches ValueError if user input is not a number
+            out "A number is required"    
+    swimmerList[swimmerName] = {'minSessions':minSessions, 'minAverageTime':minAverageTime}
+    return True
+out "Squad chooser Version: {version} \n Copyright © 2020 Matthew Nickson, All rights reserved\nLicensed under MIT" 
+while True
+    out """
+    [1] Add swimmer
+    [2] Generate squads
+    [3] Quit
+    """
+    choice = input "Please choose an option: "
+
+
+    if choice = 1
+        state = addSwimmer
+        if state
+            out "Successfully added swimmer"
+        else
+            out "Failed to add swimmer"
+    if choice = 2
+        for key in swimmerList
+            if swimmerList[key]['minSessions'] >=5 and swimmerList[key]['minAverageTime'] < 30
+                squad3.append(key)
+            elif swimmerList[key]['minSessions'] >=4 and 30<= swimmerList[key]['minAverageTime'] < 33
+                squad2.append(key)
+            elif swimmerList[key]['minSessions'] >=3 and 33<= swimmerList[key]['minAverageTime'] < 36
+                squad1.append(key)
+            else
+                noSquad.append(key)
+        out "Squad 1:\n"
+        out
+
+
+            
