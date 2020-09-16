@@ -1,0 +1,29 @@
+{
+  "name": "squad-picker",
+  "version": "1.0.0",
+  "description": "A simple app rewritten in many languages for learning",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Computroniks/squad-picker.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "education",
+    "learning"
+  ],
+  "author": "Matthew Nickson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Computroniks/squad-picker/issues"
+  },
+  "homepage": "https://github.com/Computroniks/squad-picker#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
